@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
 
@@ -38,6 +39,15 @@ export function Welcome() {
                   </a>
                 </li>
               ))}
+              <li>
+                <NavLink to="hoge">to hoge</NavLink>
+              </li>
+              <li>
+                <NavLink to="dynamic/aaaa">to dynamic</NavLink>
+              </li>
+              <li>
+                <NavLink to="prefix/hoge">to prefix hoge</NavLink>
+              </li>
             </ul>
           </nav>
         </div>
