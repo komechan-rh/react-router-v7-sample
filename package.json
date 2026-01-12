@@ -5,6 +5,8 @@
 	"scripts": {
 		"build": "react-router build",
 		"dev": "react-router dev",
+		"test": "vitest",
+		"test:run": "vitest run",
 		"start": "react-router-serve ./build/server/index.js",
 		"typecheck": "react-router typegen && tsc",
 		"lint": "npx @biomejs/biome check",
@@ -28,6 +30,7 @@
 		"tailwindcss": "^4.1.13",
 		"typescript": "^5.9.2",
 		"vite": "^7.1.7",
-		"vite-tsconfig-paths": "^5.1.4"
+		"vite-tsconfig-paths": "^5.1.4",
+		"vitest": "^4.0.16"
 	}
 }
