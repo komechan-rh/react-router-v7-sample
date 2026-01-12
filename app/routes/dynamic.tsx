@@ -7,10 +7,10 @@ import type { Route } from "./+types/home";
 // }
 
 type Params = {
-  id: string;
+	id: string;
 };
 
 // renders after the loader is done
 export default function Component({ params }: Route.ComponentProps) {
-  return <h1>{params.id}</h1>;
+	return <h1>{params.id}</h1>;
 }

@@ -1,14 +1,14 @@
 import {
-  type RouteConfig,
-  index,
-  route,
-  prefix,
-  layout,
+	index,
+	layout,
+	prefix,
+	type RouteConfig,
+	route,
 } from "@react-router/dev/routes";
 
 export default [
-  index("routes/home.tsx"),
-  layout("layout/hoge.tsx", [route("hoge", "routes/hoge.tsx")]),
-  route("dynamic/:id", "routes/dynamic.tsx"),
-  ...prefix("prefix", [route("hoge", "routes/child.tsx")]),
+	index("routes/home.tsx"),
+	layout("layout/hoge.tsx", [route("hoge", "routes/hoge.tsx")]),
+	route("dynamic/:id", "routes/dynamic.tsx"),
+	...prefix("prefix", [route("hoge", "routes/child.tsx")]),
 ] satisfies RouteConfig;
