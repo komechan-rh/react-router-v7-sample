@@ -3,11 +3,11 @@ const KATAKANA = "\u30A0-\u30FF";
 const KANJI = "\u4E00-\u9FFF";
 
 export function getIsCharOrUnderscore(value: string): boolean {
-  const charOrUnderscore = new RegExp(
-    `^[a-zA-Z_${HIRAGANA}${KATAKANA}${KANJI}]+$`
-  );
+	const charOrUnderscore = new RegExp(
+		`^[a-zA-Z_${HIRAGANA}${KATAKANA}${KANJI}]+$`,
+	);
 
-  return charOrUnderscore.test(value);
+	return charOrUnderscore.test(value);
 }
 
 // Regex for valid variable names (letters, underscores, starting with letter)
@@ -23,26 +23,26 @@ export const MULTILINE_VARIABLE_REGEX = /{{[^}]*\n[^}]*}}/g;
 export const UNCLOSED_VARIABLE_REGEX = /{{(?![^{]*}})/g;
 
 export function isValidVariableName(variable: string): boolean {
-  return VARIABLE_REGEX.test(variable);
+	return VARIABLE_REGEX.test(variable);
 }
 
 export function extractVariables(mustacheString: string): string[] {
-  const matches = Array.from(mustacheString.matchAll(MUSTACHE_REGEX))
-    .map((match) => match[1])
-    .filter(isValidVariableName);
+	const matches = Array.from(mustacheString.matchAll(MUSTACHE_REGEX))
+		.map((match) => match[1])
+		.filter(isValidVariableName);
 
-  return [...new Set(matches)];
+	return [...new Set(matches)];
 }
 
 export function stringifyValue(value: unknown) {
-  switch (typeof value) {
-    case "string":
-      return value;
-    case "number":
-      return value.toString();
-    case "boolean":
-      return value.toString();
-    default:
-      return JSON.stringify(value);
-  }
+	switch (typeof value) {
+		case "string":
+			return value;
+		case "number":
+			return value.toString();
+		case "boolean":
+			return value.toString();
+		default:
+			return JSON.stringify(value);
+	}
 }

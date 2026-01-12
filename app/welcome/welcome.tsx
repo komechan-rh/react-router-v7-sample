@@ -48,6 +48,15 @@ export function Welcome() {
 							<li>
 								<NavLink to="prefix/hoge">to prefix hoge</NavLink>
 							</li>
+							<li>
+								<NavLink to="loader-sample">
+									{({ isPending }) => (
+										<span>
+											to loader sample hoge {isPending && "transiting…"}
+										</span>
+									)}
+								</NavLink>
+							</li>
 						</ul>
 					</nav>
 				</div>
