@@ -13,5 +13,6 @@ export default [
   route("loader-sample", "routes/loader-sample/index.tsx"),
   route("action-sample", "routes/action-sample.tsx"),
   route("conform-sample", "routes/conform-sample/index.tsx"),
+  route("shadcn-sample", "routes/shadcn-sample/index.tsx"),
   ...prefix("prefix", [route("hoge", "routes/child.tsx")]),
 ] satisfies RouteConfig;
